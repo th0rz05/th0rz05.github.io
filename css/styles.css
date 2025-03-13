@@ -1,15 +1,15 @@
-/* Fonte usada: Montserrat (ver import no HTML) */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Layout Geral */
+  /* Fonte principal: Montserrat (importada no HTML) */
   body {
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #ffffff); 
     color: #333;
-    background-color: #f9f9f9;
   }
   
   /* Navbar */
@@ -18,8 +18,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
   }
   
   .logo {
@@ -30,63 +33,61 @@
   .navbar ul {
     list-style: none;
     display: flex;
+    gap: 20px;
   }
   
-  .navbar li {
-    margin-left: 20px;
-  }
-  
-  .navbar a {
+  .navbar li a {
     text-decoration: none;
     color: #333;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    transition: color 0.3s;
   }
   
-  .navbar a:hover, .navbar a.active {
+  .navbar li a:hover,
+  .navbar li a.active {
     color: #007BFF; /* cor de destaque */
   }
   
   /* Hero Section */
   .hero {
-    background: url('../images/banner.jpg') center/cover no-repeat;
+    position: relative;
     height: 80vh;
+    background: url('../images/banner.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
-    position: relative;
   }
   
-  .hero::before {
-    content: "";
+  .hero-overlay {
     position: absolute;
-    top: 0; 
-    right: 0; 
-    bottom: 0; 
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Sombra sobre a imagem */
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
   }
   
-  .hero-text {
+  .hero-content {
     position: relative;
     z-index: 1;
+    color: #fff;
+    max-width: 700px;
+    padding: 0 20px;
   }
   
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
   }
   
-  .hero p {
+  .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
   }
   
   .btn {
     background-color: #007BFF;
     color: #fff;
-    padding: 12px 24px;
+    padding: 14px 28px;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
@@ -96,7 +97,7 @@
     background-color: #0056b3;
   }
   
-  /* Sessão de Destaque */
+  /* Seção em Destaque */
   .featured {
     text-align: center;
     padding: 60px 20px;
@@ -109,25 +110,25 @@
   
   .featured p {
     font-size: 1rem;
-    margin-bottom: 40px;
-    max-width: 600px;
     margin: 0 auto 40px auto;
+    max-width: 600px;
+    color: #666;
   }
   
   .featured-projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 30px;
+    justify-content: center;
   }
   
   .card {
     background-color: #fff;
-    width: 300px;
-    border-radius: 5px;
+    width: 280px;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
     text-align: left;
+    overflow: hidden;
     transition: transform 0.3s;
   }
   
@@ -138,15 +139,18 @@
   .card img {
     width: 100%;
     height: auto;
+    display: block;
   }
   
   .card h3 {
     margin: 15px;
+    font-weight: 700;
     font-size: 1.2rem;
   }
   
   .card p {
-    margin: 0 15px 15px 15px;
+    margin: 0 15px 15px;
+    color: #555;
   }
   
   .card-btn {
@@ -157,14 +161,14 @@
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
   }
   
   .card-btn:hover {
     background-color: #0056b3;
   }
   
-  /* Sessão 'Sobre Mim' */
+  /* Seção 'Sobre' */
   .about-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -173,6 +177,7 @@
   }
   
   .about-section h1 {
+    font-size: 2.2rem;
     margin-bottom: 40px;
   }
   
@@ -186,41 +191,53 @@
   }
   
   .profile-pic {
-    width: 300px;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
     border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   
   .bio {
     max-width: 600px;
     text-align: left;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #444;
   }
   
-  /* Sessão 'Projetos' */
+  /* Seção 'Projetos' */
   .projects-section {
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
   }
   
   .projects-section h1 {
-    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #666;
   }
   
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    align-items: start;
   }
   
   .project-card {
     background-color: #fff;
-    border-radius: 5px;
-    text-align: left;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     overflow: hidden;
+    text-align: left;
     transition: transform 0.3s;
   }
   
@@ -231,7 +248,6 @@
   .project-card img {
     width: 100%;
     height: auto;
-    display: block;
   }
   
   .project-card h2 {
@@ -241,25 +257,29 @@
   
   .project-card p {
     margin: 0 15px 15px;
-    line-height: 1.4;
+    color: #555;
   }
   
-  /* Sessão 'Contato' */
+  /* Seção 'Contato' */
   .contact-section {
-    padding: 60px 20px;
     text-align: center;
+    padding: 60px 20px;
   }
   
   .contact-section h1 {
+    font-size: 2rem;
     margin-bottom: 20px;
   }
   
-  .contact-info {
-    margin-top: 20px;
+  .contact-section p {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #666;
+    line-height: 1.6;
   }
   
   .contact-info p {
-    margin: 8px 0;
+    margin: 10px 0;
   }
   
   .contact-info a {
@@ -279,26 +299,33 @@
     font-size: 0.9rem;
     color: #666;
     margin-top: 60px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
   }
   
-  /* Responsividade */
+  /* Responsividade adicional */
   @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
       align-items: flex-start;
+      padding: 15px 5%;
     }
   
     .navbar ul {
       flex-direction: column;
+      gap: 15px;
       margin-top: 10px;
-    }
-  
-    .navbar li {
-      margin: 10px 0;
     }
   
     .hero {
       height: 60vh;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
     }
   
     .about-content {
