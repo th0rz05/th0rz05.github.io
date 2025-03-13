@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio de Arquitetura</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        h1 { color: #333; }
-        img { width: 80%; max-width: 600px; margin-top: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Meu Portfólio de Arquitetura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonte Google (exemplo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" 
+    rel="stylesheet"
+  >
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Meu Portfólio de Arquitetura</h1>
-    <p>Bem-vindo ao meu portfólio! Aqui você encontrará meus projetos arquitetônicos.</p>
-    <img src="images/projeto1.jpg" alt="Projeto Arquitetônico">
-    <p><a href="projetos.html">Veja meus projetos</a></p>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">[Seu Nome]</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="about.html">Sobre</a></li>
+        <li><a href="projects.html">Projetos</a></li>
+        <li><a href="contact.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero/Banner Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bem-vindo ao meu Portfólio</h1>
+      <p>Arquitetura, inovação e criatividade.</p>
+      <a href="projects.html" class="btn">Ver Projetos</a>
+    </div>
+  </section>
+
+  <!-- Destaque/Chamada -->
+  <section class="featured">
+    <h2>Destaques</h2>
+    <p>Confira alguns dos meus projetos de destaque em design arquitetônico.</p>
+    <div class="featured-projects">
+      <div class="card">
+        <img src="images/projeto1.jpg" alt="Projeto 1">
+        <h3>Residência Moderna</h3>
+        <p>Projeto sustentável e minimalista.</p>
+        <a href="projects.html#residencia-moderna" class="card-btn">Ver detalhes</a>
+      </div>
+      <div class="card">
+        <img src="images/projeto2.jpg" alt="Projeto 2">
+        <h3>Espaço Urbano</h3>
+        <p>Revitalização de praça pública.</p>
+        <a href="projects.html#espaco-urbano" class="card-btn">Ver detalhes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 [Seu Nome] - Todos os direitos reservados</p>
+  </footer>
+
 </body>
 </html>
